@@ -1,0 +1,62 @@
+name: Ingest mono b64 sidecars
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/ingest-mono-b64.yml
+    branches:
+      - cursor/pauls-pallet-walls-site-13eb
+permissions:
+  contents: write
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cursor/pauls-pallet-walls-site-13eb
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Download and verify mono sidecars
+        run: |
+          set -euo pipefail
+          mkdir -p public/images
+          declare -A FILES=(
+            [pallet-wall-package-boards.jpg.b64]="https://h.uguu.se/emXGVxec.b64|58612|49d5414f57058b154e57a73a2ac9ba0afea88047582d4881a559a178c140809a"
+            [pallet-wall-example-living.jpg.b64]="https://h.uguu.se/rylKjqoq.b64|63152|f27a80251aebb219affae2605b08662610dbbcd687e60e62446f22807934165a"
+            [pallet-wall-example-cafe.jpg.b64]="https://h.uguu.se/XdHXWDBA.b64|80736|394b76621a8d105a83cc82403db6ff06c6c987e7e65226c1b90bb1afbe83810c"
+            [pallet-wall-example-bedroom.jpg.b64]="https://d.uguu.se/gvObLbgQ.b64|86124|64cfeda5e5001a255767ae23345af16fa4e1e06c152f9c5558e2cec88c9b3a7d"
+            [pallet-wall-package-kit.jpg.b64]="https://n.uguu.se/Bwuoaojf.b64|82596|bcef1cd118873ee1870199da4cb933168707a6e9cb7673452f252f64d8d1f353"
+          )
+          for name in "${!FILES[@]}"; do
+            IFS='|' read -r url size sha <<< "${FILES[$name]}"
+            out="public/images/$name"
+            curl -fsSL "$url" -o "$out"
+            got_size=$(wc -c < "$out" | tr -d ' ')
+            got_sha=$(sha256sum "$out" | awk '{print $1}')
+            echo "$name size=$got_size sha=$got_sha"
+            test "$got_size" = "$size"
+            test "$got_sha" = "$sha"
+            # ensure single-line base64
+            tr -d '\n\r' < "$out" > "$out.tmp" && mv "$out.tmp" "$out"
+          done
+          rm -f public/images/_bin-test.bin \
+            public/images/.boards-mono-staging.b64 \
+            public/images/.mono-upload-test.txt \
+            public/images/.path-ref-test.txt \
+            public/images/.rtth-fidelity-test.txt
+      - name: Commit monos if changed
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A public/images/*.b64 public/images/_bin-test.bin \
+            public/images/.boards-mono-staging.b64 \
+            public/images/.mono-upload-test.txt \
+            public/images/.path-ref-test.txt \
+            public/images/.rtth-fidelity-test.txt || true
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Add complete mono pallet-wall image b64 sidecars"
+          git push origin HEAD:cursor/pauls-pallet-walls-site-13eb
