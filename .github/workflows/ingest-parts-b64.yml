@@ -1,0 +1,74 @@
+name: Ingest pallet-wall b64 parts
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/ingest-parts-b64.yml
+    branches:
+      - cursor/pauls-pallet-walls-site-13eb
+permissions:
+  contents: write
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cursor/pauls-pallet-walls-site-13eb
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Download extract and verify 5500-char parts
+        run: |
+          set -euo pipefail
+          TGZ_URL="https://d.uguu.se/ReaAPOxS.tgz"
+          TGZ_SHA="1ab550d8ba802a1f9ff94012cec6436369933f6a473f45fa0588035a36f25727"
+          WANT_URL="https://h.uguu.se/RbWhfzQa.json"
+          mkdir -p public/images /tmp/parts-in
+          curl -fsSL "$TGZ_URL" -o /tmp/parts.tgz
+          echo "$TGZ_SHA  /tmp/parts.tgz" | sha256sum -c -
+          tar -xzf /tmp/parts.tgz -C /tmp/parts-in
+          curl -fsSL "$WANT_URL" -o /tmp/want-shas.json
+          python3 <<'PY'
+          import hashlib, json, pathlib, sys
+          want = json.load(open("/tmp/want-shas.json"))
+          src = pathlib.Path("/tmp/parts-in")
+          dst = pathlib.Path("public/images")
+          ok = 0
+          for name, expected in sorted(want.items()):
+            p = src / name
+            if not p.exists():
+              print("MISSING in tarball", name)
+              sys.exit(1)
+            data = p.read_text()
+            if "\n" in data or "\r" in data:
+              print("NEWLINE in", name)
+              sys.exit(1)
+            blob = hashlib.sha1(f"blob {len(data)}\0".encode() + data.encode()).hexdigest()
+            if blob != expected:
+              print(f"SHA FAIL {name} got={blob} want={expected} len={len(data)}")
+              sys.exit(1)
+            (dst / name).write_text(data)
+            ok += 1
+            print(f"OK {name} len={len(data)} sha={blob}")
+          print(f"verified_and_wrote={ok}")
+          PY
+          rm -f \
+            public/images/pallet-wall-example-bedroom.jpg.b64 \
+            public/images/pallet-wall-example-cafe.jpg.b64 \
+            public/images/pallet-wall-package-boards.jpg.b64 \
+            public/images/pallet-wall-package-kit.jpg.b64 \
+            public/images/_bin-test.bin \
+            public/images/.boards-mono-staging.b64 \
+            public/images/.mono-upload-test.txt \
+            public/images/.path-ref-test.txt
+      - name: Commit parts if changed
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A public/images/
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Add full pallet-wall bedroom/cafe/boards/kit b64 parts (5500-char)"
+          git push origin HEAD:cursor/pauls-pallet-walls-site-13eb
