@@ -1,23 +1,83 @@
-/** Stock photos (Unsplash) used as placeholders until Paul adds real project shots. */
+/**
+ * Pallet wall example + package imagery.
+ * Generated product/example shots live in /public/images (placeholders until Paul supplies real photos).
+ */
 export const images = {
   hero: {
-    src: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1800&q=80",
-    alt: "Warm wood-paneled feature wall in a styled interior",
+    src: "/images/pallet-wall-example-living.jpg",
+    alt: "Living room with a floor-to-ceiling horizontal pallet wood accent wall",
   },
+  exampleLiving: {
+    src: "/images/pallet-wall-example-living.jpg",
+    alt: "Living room featuring a rustic horizontal pallet board feature wall",
+  },
+  exampleBedroom: {
+    src: "/images/pallet-wall-example-bedroom.jpg",
+    alt: "Bedroom with a vertical pallet wood accent wall behind the bed",
+  },
+  exampleCafe: {
+    src: "/images/pallet-wall-example-cafe.jpg",
+    alt: "Café bar backed by a full rustic pallet wood wall",
+  },
+  packageKit: {
+    src: "/images/pallet-wall-package-kit.jpg",
+    alt: "DIY pallet wall package kit with stacked boards, hardware, guide, and finish sample",
+  },
+  packageBoards: {
+    src: "/images/pallet-wall-package-boards.jpg",
+    alt: "Pallet wall package contents laid out: cut boards, fasteners, spacers, and instructions",
+  },
+  // Back-compat aliases used across older sections
   slatDetail: {
-    src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=80",
-    alt: "Close-up of a finished vertical wood slat feature wall",
+    src: "/images/pallet-wall-example-bedroom.jpg",
+    alt: "Close detail of a vertical pallet wood feature wall",
   },
   boards: {
-    src: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1400&q=80",
-    alt: "Wood boards prepared for a pallet wall package kit",
+    src: "/images/pallet-wall-package-kit.jpg",
+    alt: "Pallet wall package kit ready to ship",
   },
   commercial: {
-    src: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80",
-    alt: "Bright commercial interior space suited for a wood feature wall",
+    src: "/images/pallet-wall-example-cafe.jpg",
+    alt: "Commercial café space with a pallet wood feature wall",
   },
   livingRoom: {
-    src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=80",
-    alt: "Living room interior with warm wood accent wall potential",
+    src: "/images/pallet-wall-example-living.jpg",
+    alt: "Residential living room pallet wall example",
   },
 } as const;
+
+export const examples = [
+  {
+    key: "living",
+    title: "Living room feature",
+    caption: "Horizontal mixed-tone pallet boards as a full accent wall.",
+    image: images.exampleLiving,
+  },
+  {
+    key: "bedroom",
+    title: "Bedroom headboard wall",
+    caption: "Vertical planks for a calm, textured bedroom backdrop.",
+    image: images.exampleBedroom,
+  },
+  {
+    key: "cafe",
+    title: "Café / commercial bar",
+    caption: "Rustic full-wall install behind a service counter.",
+    image: images.exampleCafe,
+  },
+] as const;
+
+export const packageShots = [
+  {
+    key: "kit",
+    title: "Shippable package kit",
+    caption: "Stacked sanded boards, fastener box, layout guide, finish sample.",
+    image: images.packageKit,
+  },
+  {
+    key: "contents",
+    title: "What’s in the box",
+    caption: "Boards sorted by length with hardware and spacing sticks.",
+    image: images.packageBoards,
+  },
+] as const;
