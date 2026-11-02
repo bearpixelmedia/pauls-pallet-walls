@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Karla } from "next/font/google";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
-import { images } from "@/lib/images";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -39,20 +38,11 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: images.hero.src,
-        width: 1800,
-        height: 1800,
-        alt: images.hero.alt,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: site.name,
     description: site.description,
-    images: [images.hero.src],
   },
   alternates: {
     canonical: "/",

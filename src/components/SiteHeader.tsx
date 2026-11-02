@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BrandLogo } from "@/components/BrandLogo";
 
 type Props = {
   variant?: "hero" | "solid";
@@ -26,16 +27,7 @@ export function SiteHeader({ variant }: Props) {
       }
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
-        <Link
-          href="/"
-          className={`font-display text-lg tracking-tight sm:text-xl ${
-            isHero
-              ? "text-ash transition-colors hover:text-brass-soft"
-              : "text-pine transition-colors hover:text-canopy"
-          }`}
-        >
-          Paul&apos;s Pallet Walls
-        </Link>
+        <BrandLogo tone={isHero ? "hero" : "solid"} />
         <nav
           className={`hidden items-center gap-7 text-sm md:flex ${
             isHero ? "text-mist/90" : ""

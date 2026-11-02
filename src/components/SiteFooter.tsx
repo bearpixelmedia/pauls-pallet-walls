@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 import { site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -6,8 +7,8 @@ export function SiteFooter() {
     <footer className="border-t border-pine/10 bg-pine py-12 text-mist">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:grid-cols-[1.2fr_1fr_1fr] sm:px-8">
         <div>
-          <p className="font-display text-xl text-ash">{site.name}</p>
-          <p className="mt-2 max-w-sm text-sm leading-relaxed text-mist/70">
+          <BrandLogo tone="hero" />
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-mist/70">
             Pallet wall packages &amp; construction serving{" "}
             {site.location.areaLabel}.
           </p>
