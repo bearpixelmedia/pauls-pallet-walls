@@ -7,60 +7,27 @@ export const contentType = "image/png";
 export default function OpenGraphImage() {
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          background: "#0E2419",
-          fontFamily: "Georgia, Times New Roman, serif",
-        }}
-      >
-        <div
-          style={{
-            width: 420,
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "#1A3326",
-          }}
-        >
-          <div
-            style={{
-              width: 280,
-              height: 280,
-              borderRadius: 28,
-              background: "#E6EBE7",
-              display: "flex",
-              position: "relative",
-              overflow: "hidden",
-            }}
-          >
-            <div style={{ display: "flex", gap: 10, position: "absolute", left: 22, top: 40 }}>
-              <div style={{ width: 28, height: 200, background: "#0E2419", borderRadius: 4 }} />
-              <div style={{ width: 28, height: 200, background: "#1A3326", borderRadius: 4 }} />
-              <div style={{ width: 28, height: 200, background: "#0E2419", borderRadius: 4 }} />
+      <div style={{ width: "100%", height: "100%", display: "flex", background: "#0E2419", fontFamily: "Georgia, Times New Roman, serif" }}>
+        <div style={{ width: 440, height: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "#14281E" }}>
+          <div style={{ width: 300, height: 300, borderRadius: 150, background: "#E6EBE7", border: "6px solid #B08D3C", display: "flex", position: "relative", overflow: "hidden" }}>
+            <div style={{ display: "flex", gap: 12, position: "absolute", left: 28, top: 36 }}>
+              <div style={{ width: 28, height: 230, background: "#0E2419", borderRadius: 3 }} />
+              <div style={{ width: 28, height: 230, background: "#1A3326", borderRadius: 3 }} />
+              <div style={{ width: 28, height: 230, background: "#0E2419", borderRadius: 3 }} />
             </div>
-            <div style={{ position: "absolute", left: 18, top: 90, width: 110, height: 12, background: "#B08D3C", borderRadius: 3 }} />
-            <div style={{ position: "absolute", left: 18, top: 150, width: 110, height: 12, background: "#C9AE66", borderRadius: 3 }} />
-            <div style={{ position: "absolute", right: 28, top: 48, width: 110, height: 36, background: "#9B2C2C", borderRadius: "55px 55px 8px 8px" }} />
-            <div style={{ position: "absolute", right: 40, top: 78, width: 86, height: 80, background: "#D4A574", borderRadius: 43 }} />
-            <div style={{ position: "absolute", right: 42, top: 130, width: 82, height: 90, background: "#3D2914", borderRadius: "10px 10px 42px 42px" }} />
-            <div style={{ position: "absolute", right: 36, bottom: 18, width: 94, height: 48, background: "#7A1F1F", borderRadius: "8px 8px 16px 16px" }} />
+            <div style={{ position: "absolute", left: 24, top: 95, width: 110, height: 12, background: "#B08D3C", borderRadius: 3 }} />
+            <div style={{ position: "absolute", left: 24, top: 155, width: 110, height: 12, background: "#C9AE66", borderRadius: 3 }} />
+            <div style={{ position: "absolute", right: 34, top: 52, width: 110, height: 48, background: "#8B1E1E", borderRadius: "56px 56px 8px 8px" }} />
+            <div style={{ position: "absolute", right: 48, top: 88, width: 82, height: 76, background: "#D7AE86", borderRadius: 42 }} />
+            <div style={{ position: "absolute", right: 50, top: 140, width: 78, height: 96, background: "#3D2914", borderRadius: "12px 12px 40px 40px" }} />
+            <div style={{ position: "absolute", right: 42, bottom: 16, width: 94, height: 44, background: "#7A1A1A", borderRadius: "8px 8px 28px 28px" }} />
           </div>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: 56, paddingRight: 48 }}>
-          <div style={{ fontSize: 58, fontWeight: 600, color: "#E6EBE7", letterSpacing: -1, lineHeight: 1.05 }}>
-            Paul Bunyan&apos;s
-          </div>
-          <div style={{ marginTop: 16, fontSize: 32, fontWeight: 500, color: "#C8D4CC", letterSpacing: 5 }}>
-            PALLET WALLS
-          </div>
-          <div style={{ marginTop: 22, width: 72, height: 4, background: "#B08D3C", borderRadius: 2 }} />
-          <div style={{ marginTop: 28, fontSize: 24, color: "#C9AE66", fontFamily: "Arial, Helvetica, sans-serif" }}>
-            Packages &amp; construction
-          </div>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: 48, paddingRight: 48 }}>
+          <div style={{ fontSize: 56, fontWeight: 600, color: "#E6EBE7", letterSpacing: -1, lineHeight: 1.05 }}>Paul Bunyan&apos;s</div>
+          <div style={{ marginTop: 14, fontSize: 30, fontWeight: 500, color: "#C8D4CC", letterSpacing: 6 }}>PALLET WALLS</div>
+          <div style={{ marginTop: 22, width: 72, height: 3, background: "#B08D3C", borderRadius: 2 }} />
+          <div style={{ marginTop: 28, fontSize: 22, color: "#C9AE66", fontFamily: "Georgia, Times New Roman, serif", fontStyle: "italic" }}>Classic wood feature walls</div>
         </div>
       </div>
     ),
