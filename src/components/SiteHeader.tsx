@@ -41,6 +41,9 @@ export function SiteHeader({ variant }: Props) {
             isHero ? "text-mist/90" : ""
           }`}
         >
+          <Link href="/#examples" className={linkClass}>
+            Examples
+          </Link>
           <Link href="/services/packages" className={linkClass}>
             Packages
           </Link>
