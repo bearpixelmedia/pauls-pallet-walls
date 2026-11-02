@@ -2,12 +2,12 @@ import { images } from "@/lib/images";
 
 /** Site-wide config. Local SEO fields marked placeholder — Paul should replace. */
 export const site = {
-  name: "Paul's Pallet Walls",
-  shortName: "Paul's Pallet Walls",
+  name: "Paul Bunyan's Pallet Walls",
+  shortName: "Paul Bunyan's",
   url: "https://pauls-pallet-walls.vercel.app",
   description:
-    "Pallet wall packages and professional pallet wall construction for homes, studios, and commercial spaces.",
-  email: "hello@paulspalletwalls.example", // placeholder
+    "Pallet wall packages and professional pallet wall construction for homes, studios, and commercial spaces — from Paul Bunyan's workshop.",
+  email: "hello@paulbunyanspalletwalls.example", // placeholder
   phone: "(555) 010-WALL", // placeholder
   phoneTel: "+15550109255", // placeholder
   /** Local SEO placeholders — replace with Paul's real market */
