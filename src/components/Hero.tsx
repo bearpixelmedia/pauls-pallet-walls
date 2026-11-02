@@ -18,12 +18,13 @@ export function Hero() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-pine via-pine/80 to-pine/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-pine via-transparent to-pine/40" />
-        <div aria-hidden className="absolute inset-0 slat-field opacity-40" />
+        {/* Pine wash + grain overlay — keeps type readable while the pallet wall shows through */}
+        <div className="absolute inset-0 bg-gradient-to-r from-pine via-pine/75 to-pine/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-pine via-transparent to-pine/35" />
+        <div aria-hidden className="absolute inset-0 slat-field opacity-30" />
         <div
           aria-hidden
-          className="absolute inset-0 grain opacity-[0.12] mix-blend-overlay"
+          className="absolute inset-0 grain opacity-[0.14] mix-blend-overlay"
         />
       </div>
 
