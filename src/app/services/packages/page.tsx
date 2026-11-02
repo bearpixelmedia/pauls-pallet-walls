@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { PackageGallery } from "@/components/PackageGallery";
 import { PageShell } from "@/components/PageShell";
 import { ServiceHero } from "@/components/ServiceHero";
 import { ServiceJsonLd } from "@/components/JsonLd";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   ),
   alternates: { canonical: "/services/packages" },
   openGraph: {
-    images: [images.boards.src],
+    images: [images.packageKit.src],
   },
 };
 
@@ -47,10 +48,12 @@ export default function PackagesServicePage() {
         eyebrow="Packages"
         title={`Pallet wall packages for ${site.location.city} homes & studios`}
         description="Ship a kit to your door — pre-cut boards, spacing charts, fasteners, and finish samples so you can hang a clean feature wall on your schedule."
-        image={images.boards.src}
-        imageAlt={images.boards.alt}
+        image={images.packageKit.src}
+        imageAlt={images.packageKit.alt}
         localNote={`Local SEO placeholder market: ${site.location.areaLabel}`}
       />
+
+      <PackageGallery />
 
       <section className="py-16 sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:grid-cols-2 sm:px-8">
@@ -80,8 +83,8 @@ export default function PackagesServicePage() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden">
             <Image
-              src={images.livingRoom.src}
-              alt={images.livingRoom.alt}
+              src={images.packageBoards.src}
+              alt={images.packageBoards.alt}
               fill
               sizes="(max-width:768px) 100vw, 50vw"
               className="object-cover"

@@ -1,4 +1,5 @@
 import { Construction } from "@/components/Construction";
+import { ExamplesGallery } from "@/components/ExamplesGallery";
 import { Hero } from "@/components/Hero";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Packages } from "@/components/Packages";
@@ -25,6 +26,7 @@ export default function Home() {
       <SiteHeader variant="hero" />
       <main className="flex-1">
         <Hero />
+        <ExamplesGallery />
         <ServicesPreview />
         <Packages />
         <Construction />
