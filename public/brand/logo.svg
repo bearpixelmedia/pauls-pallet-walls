@@ -1,16 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" fill="none" role="img" aria-label="Paul's Pallet Walls">
-  <!-- Mark -->
-  <g transform="translate(0,8)">
-    <rect width="80" height="80" rx="5" fill="#E6EBE7"/>
-    <rect x="12.5" y="10" width="15" height="60" rx="2" fill="#0E2419"/>
-    <rect x="32.5" y="10" width="15" height="60" rx="2" fill="#1A3326"/>
-    <rect x="52.5" y="10" width="15" height="60" rx="2" fill="#0E2419"/>
-    <path d="M20 18v44M40 18v44M60 18v44" stroke="#264A36" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
-    <rect x="10" y="26" width="60" height="4.5" rx="1.2" fill="#B08D3C"/>
-    <rect x="10" y="50" width="60" height="4.5" rx="1.2" fill="#C9AE66"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 110" fill="none" role="img" aria-label="Paul Bunyan's Pallet Walls">
+  <g transform="translate(0,7) scale(1.0)">
+    <rect width="96" height="96" rx="12" fill="#E6EBE7"/>
+    <rect x="8" y="18" width="10" height="60" rx="1.5" fill="#0E2419"/>
+    <rect x="20" y="18" width="10" height="60" rx="1.5" fill="#1A3326"/>
+    <rect x="32" y="18" width="10" height="60" rx="1.5" fill="#0E2419"/>
+    <rect x="6" y="32" width="38" height="3.5" rx="1" fill="#B08D3C"/>
+    <rect x="6" y="52" width="38" height="3.5" rx="1" fill="#C9AE66"/>
+    <ellipse cx="64" cy="28" rx="18" ry="8" fill="#7A1F1F"/>
+    <path d="M46 28c0-10 8-18 18-18s18 8 18 18" fill="#9B2C2C"/>
+    <rect x="44" y="26" width="40" height="5" rx="1.5" fill="#5C1414"/>
+    <ellipse cx="64" cy="42" rx="15" ry="14" fill="#D4A574"/>
+    <circle cx="58" cy="40" r="1.8" fill="#0E2419"/>
+    <circle cx="70" cy="40" r="1.8" fill="#0E2419"/>
+    <ellipse cx="64" cy="45" rx="2.2" ry="1.6" fill="#C4895A"/>
+    <path d="M50 48c2 14 10 22 14 24 4-2 12-10 14-24-4 4-10 6-14 6s-10-2-14-6z" fill="#3D2914"/>
+    <path d="M54 50c3 10 7 15 10 17 3-2 7-7 10-17-3 3-7 4-10 4s-7-1-10-4z" fill="#5C3D1E"/>
+    <path d="M46 68c4 6 10 10 18 10s14-4 18-10l-6 14H52l-6-14z" fill="#7A1F1F"/>
+    <path d="M52 72h24v3H52z" fill="#B08D3C"/>
+    <rect x="82" y="48" width="3" height="28" rx="1" fill="#5C3D1E"/>
+    <path d="M80 48h10l-2 8H82z" fill="#8A8F8A"/>
   </g>
-  <!-- Wordmark -->
-  <text x="104" y="42" fill="#0E2419" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="600" letter-spacing="-0.5">Paul's</text>
-  <text x="104" y="74" fill="#0E2419" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="500" letter-spacing="1.5">PALLET WALLS</text>
-  <rect x="104" y="82" width="48" height="2.5" rx="1" fill="#B08D3C"/>
+  <text x="118" y="48" fill="#0E2419" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="600" letter-spacing="-0.5">Paul Bunyan's</text>
+  <text x="118" y="82" fill="#0E2419" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="500" letter-spacing="2">PALLET WALLS</text>
+  <rect x="118" y="92" width="56" height="2.5" rx="1" fill="#B08D3C"/>
 </svg>

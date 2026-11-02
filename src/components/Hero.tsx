@@ -28,8 +28,8 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-16 pt-28 sm:px-8 sm:pb-24 sm:pt-32">
-        <p className="animate-rise font-display text-[clamp(2.75rem,9vw,6.5rem)] leading-[0.92] tracking-[-0.03em] text-ash">
-          Paul&apos;s
+        <p className="animate-rise font-display text-[clamp(2.5rem,8vw,5.75rem)] leading-[0.92] tracking-[-0.03em] text-ash">
+          Paul Bunyan&apos;s
           <br />
           Pallet Walls
         </p>
