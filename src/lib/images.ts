@@ -1,48 +1,47 @@
 /**
  * Pallet wall example + package imagery.
- * Using Unsplash remote URLs until local JPEG sidecars are fully on the deploy branch.
- * Replace with Paul's real project photos when available.
+ * Generated product/example shots live in /public/images (placeholders until Paul supplies real photos).
  */
 export const images = {
   hero: {
-    src: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1800&q=80",
-    alt: "Living room with a warm wood accent wall",
+    src: "/images/pallet-wall-example-living.jpg",
+    alt: "Living room with a floor-to-ceiling horizontal pallet wood accent wall",
   },
   exampleLiving: {
-    src: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1400&q=80",
-    alt: "Living room featuring a rustic wood feature wall",
+    src: "/images/pallet-wall-example-living.jpg",
+    alt: "Living room featuring a rustic horizontal pallet board feature wall",
   },
   exampleBedroom: {
-    src: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1400&q=80",
-    alt: "Bedroom with a vertical wood accent wall behind the bed",
+    src: "/images/pallet-wall-example-bedroom.jpg",
+    alt: "Bedroom with a vertical pallet wood accent wall behind the bed",
   },
   exampleCafe: {
-    src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1400&q=80",
-    alt: "Café interior with warm wood wall texture",
+    src: "/images/pallet-wall-example-cafe.jpg",
+    alt: "Café interior with warm pallet wood wall behind the service counter",
   },
   packageKit: {
-    src: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1400&q=80",
-    alt: "Stacked sanded boards ready for a wood wall install",
+    src: "/images/pallet-wall-package-kit.jpg",
+    alt: "Shippable pallet wall package kit with stacked boards and hardware box",
   },
   packageBoards: {
-    src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80",
-    alt: "Workshop boards and lumber laid out for a project",
+    src: "/images/pallet-wall-package-boards.jpg",
+    alt: "Sorted pallet boards by length with fasteners and spacing sticks",
   },
   slatDetail: {
-    src: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1400&q=80",
-    alt: "Close detail of a vertical wood feature wall",
+    src: "/images/pallet-wall-example-bedroom.jpg",
+    alt: "Close detail of vertical pallet board texture",
   },
   boards: {
-    src: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1400&q=80",
+    src: "/images/pallet-wall-package-kit.jpg",
     alt: "Board stack ready to ship as a wall package",
   },
   commercial: {
-    src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1400&q=80",
-    alt: "Commercial café space with warm wood walls",
+    src: "/images/pallet-wall-example-cafe.jpg",
+    alt: "Commercial café space with warm pallet wood walls",
   },
   livingRoom: {
-    src: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1400&q=80",
-    alt: "Residential living room wood wall example",
+    src: "/images/pallet-wall-example-living.jpg",
+    alt: "Residential living room pallet wall example",
   },
 } as const;
 
