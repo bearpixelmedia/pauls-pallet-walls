@@ -64,7 +64,7 @@ export function Packages() {
           </a>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
           {packages.map((pkg) => (
             <article
               key={pkg.name}
