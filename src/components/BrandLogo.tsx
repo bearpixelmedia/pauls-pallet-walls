@@ -27,14 +27,14 @@ export function BrandLogo({
     <Link
       href="/"
       className={`group inline-flex items-center gap-3 ${className}`}
-      aria-label="Paul's Pallet Walls home"
+      aria-label="Paul Bunyan's Pallet Walls home"
     >
       <Image
         src={markSrc}
-        alt=""
-        width={40}
-        height={40}
-        className="h-9 w-9 shrink-0 sm:h-10 sm:w-10"
+        alt="Paul Bunyan mascot with pallet wall"
+        width={44}
+        height={44}
+        className="h-10 w-10 shrink-0 sm:h-11 sm:w-11"
         priority
       />
       {showWordmark ? (
@@ -42,7 +42,7 @@ export function BrandLogo({
           <span
             className={`font-display text-lg tracking-tight transition-colors sm:text-xl ${nameClass}`}
           >
-            Paul&apos;s
+            Paul Bunyan&apos;s
           </span>
           <span
             className={`mt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] sm:text-xs ${
