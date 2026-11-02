@@ -32,7 +32,7 @@ export function ServicesPreview() {
                 <div className="absolute inset-0 bg-gradient-to-t from-pine/70 to-transparent" />
               </div>
               <h3 className="mt-4 font-display text-xl tracking-tight text-ink group-hover:text-pine">
-                {site.title}
+                {service.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-ink/70">
                 {service.description}

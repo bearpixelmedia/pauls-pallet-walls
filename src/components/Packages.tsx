@@ -1,9 +1,9 @@
 const packages = [
   {
     name: "Starter Strip",
-    size: "Approx. 6-8 ft feature",
+    size: "Approx. 6–8 ft feature",
     price: "$349",
-    note: "Placeholder pricing - replace with Paul's rates",
+    note: "Placeholder pricing — replace with Paul's rates",
     includes: [
       "Pre-cut, sanded pallet boards",
       "Layout guide & spacing chart",
@@ -12,9 +12,9 @@ const packages = [
   },
   {
     name: "Room Accent",
-    size: "Approx. 10-14 ft wall",
+    size: "Approx. 10–14 ft wall",
     price: "$789",
-    note: "Placeholder pricing - replace with Paul's rates",
+    note: "Placeholder pricing — replace with Paul's rates",
     featured: true,
     includes: [
       "Matched board set, kiln-dried look",
@@ -25,9 +25,9 @@ const packages = [
   },
   {
     name: "Full Feature",
-    size: "Approx. 16-22 ft statement wall",
+    size: "Approx. 16–22 ft statement wall",
     price: "$1,450",
-    note: "Placeholder pricing - replace with Paul's rates",
+    note: "Placeholder pricing — replace with Paul's rates",
     includes: [
       "Premium sorted boards",
       "Custom height & pattern",
@@ -50,12 +50,18 @@ export function Packages() {
             Pallet wall kits ready to hang.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink/70">
-            Measured boards, clear instructions, and the hardware you need -
+            Measured boards, clear instructions, and the hardware you need —
             ship to your door and install on your schedule.
           </p>
           <p className="mt-3 inline-block rounded-sm bg-brass/15 px-2.5 py-1 text-xs font-medium text-ink/80">
-            Placeholder pricing - Paul can update these tiers anytime
+            Placeholder pricing — Paul can update these tiers anytime
           </p>
+          <a
+            href="/services/packages"
+            className="mt-4 inline-block text-sm font-semibold text-pine hover:underline"
+          >
+            Full packages service page →
+          </a>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">

@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { images } from "@/lib/images";
+
 const services = [
   {
     title: "On-site build",
@@ -27,17 +30,34 @@ export function Construction() {
       <div aria-hidden className="absolute inset-0 grain opacity-[0.08] mix-blend-overlay" />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brass-soft">
-            Construction
-          </p>
-          <h2 className="mt-3 font-display text-3xl tracking-tight sm:text-4xl">
-            Pallet wall construction, done right.
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-mist/85">
-            Prefer a turnkey install? Paul handles layout, fastening, and
-            finishing so the wall looks intentional — not improvised.
-          </p>
+        <div className="grid items-end gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brass-soft">
+              Construction
+            </p>
+            <h2 className="mt-3 font-display text-3xl tracking-tight sm:text-4xl">
+              Pallet wall construction, done right.
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-mist/85">
+              Prefer a turnkey install? Paul handles layout, fastening, and
+              finishing so the wall looks intentional — not improvised.
+            </p>
+            <a
+              href="/services/construction"
+              className="mt-4 inline-block text-sm font-semibold text-brass-soft hover:underline"
+            >
+              Construction service page →
+            </a>
+          </div>
+          <div className="relative aspect-[5/3] overflow-hidden">
+            <Image
+              src={images.slatDetail.src}
+              alt={images.slatDetail.alt}
+              fill
+              sizes="(max-width:1024px) 100vw, 40vw"
+              className="object-cover"
+            />
+          </div>
         </div>
 
         <div className="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
