@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { PageShareStrip } from "@/components/PageShareStrip";
 import { PageShell } from "@/components/PageShell";
 import { ServiceHero } from "@/components/ServiceHero";
 import { ServiceJsonLd } from "@/components/JsonLd";
@@ -47,16 +48,9 @@ export default function CommercialServicePage() {
                 sightlines.
               </p>
               <ul className="mt-6 space-y-3 text-ink/75">
-                {[
-                  "After-hours scheduling when needed",
-                  "Patterns that read well on camera and social",
-                  "Coordinated install around existing fixtures",
-                ].map((item) => (
+                {["After-hours scheduling when needed","Patterns that read well on camera and social","Coordinated install around existing fixtures"].map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span
-                      aria-hidden
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sage"
-                    />
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sage" />
                     {item}
                   </li>
                 ))}
@@ -74,6 +68,11 @@ export default function CommercialServicePage() {
           </div>
         </div>
       </section>
+
+      <PageShareStrip
+        path="/services/commercial"
+        title={`Commercial pallet walls | ${site.name}`}
+      />
     </PageShell>
   );
 }

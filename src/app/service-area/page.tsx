@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { PageShareStrip } from "@/components/PageShareStrip";
 import { PageShell } from "@/components/PageShell";
 import { localDescription, localTitle, site } from "@/lib/site";
 import { images } from "@/lib/images";
@@ -97,16 +98,27 @@ export default function ServiceAreaPage() {
             </div>
           </div>
 
-          <div className="mt-14">
+          <div className="mt-14 flex flex-wrap gap-4">
             <Link
               href="/#quote"
               className="inline-flex rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-ash hover:bg-canopy"
             >
               Request a local quote
             </Link>
+            <Link
+              href="/#tools"
+              className="inline-flex rounded-sm border border-pine/25 px-5 py-3 text-sm font-semibold text-pine hover:bg-ash/60"
+            >
+              Check ZIP on home tools
+            </Link>
           </div>
         </div>
       </section>
+
+      <PageShareStrip
+        path="/service-area"
+        title={`Service area — ${site.location.city}, ${site.location.region} | ${site.name}`}
+      />
     </PageShell>
   );
 }

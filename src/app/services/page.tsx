@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { PageShareStrip } from "@/components/PageShareStrip";
 import { PageShell } from "@/components/PageShell";
 import { localDescription, localTitle, services, site } from "@/lib/site";
 
@@ -68,6 +69,11 @@ export default function ServicesIndexPage() {
           ))}
         </div>
       </section>
+
+      <PageShareStrip
+        path="/services"
+        title={`Pallet wall services | ${site.name}`}
+      />
     </PageShell>
   );
 }
