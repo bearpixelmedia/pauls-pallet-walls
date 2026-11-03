@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { PackageGallery } from "@/components/PackageGallery";
+import { PageShareStrip } from "@/components/PageShareStrip";
 import { PageShell } from "@/components/PageShell";
 import { ServiceHero } from "@/components/ServiceHero";
 import { ServiceJsonLd } from "@/components/JsonLd";
@@ -62,17 +63,9 @@ export default function PackagesServicePage() {
               What&apos;s in a package
             </h2>
             <ul className="mt-6 space-y-3 text-ink/75">
-              {[
-                "Sorted, sanded pallet boards cut to your wall length",
-                "Layout guide and spacing chart",
-                "Fastener kit and finish sample",
-                "Optional stain/oil notes for Room Accent & Full Feature",
-              ].map((item) => (
+              {["Sorted, sanded pallet boards cut to your wall length","Layout guide and spacing chart","Fastener kit and finish sample","Optional stain/oil notes for Room Accent & Full Feature"].map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span
-                    aria-hidden
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sage"
-                  />
+                  <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sage" />
                   {item}
                 </li>
               ))}
@@ -100,20 +93,20 @@ export default function PackagesServicePage() {
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {tiers.map((tier) => (
-              <div
-                key={tier.name}
-                className="border-t-2 border-canopy/30 pt-5"
-              >
+              <div key={tier.name} className="border-t-2 border-canopy/30 pt-5">
                 <h3 className="font-display text-xl text-ink">{tier.name}</h3>
                 <p className="mt-1 text-sm text-ink/55">{tier.size}</p>
-                <p className="mt-4 font-display text-3xl text-pine">
-                  {tier.price}
-                </p>
+                <p className="mt-4 font-display text-3xl text-pine">{tier.price}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      <PageShareStrip
+        path="/services/packages"
+        title={`Pallet wall packages | ${site.name}`}
+      />
     </PageShell>
   );
 }

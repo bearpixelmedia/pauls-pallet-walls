@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { PageShareStrip } from "@/components/PageShareStrip";
 import { PageShell } from "@/components/PageShell";
 import { ServiceHero } from "@/components/ServiceHero";
 import { ServiceJsonLd } from "@/components/JsonLd";
@@ -52,18 +53,9 @@ export default function ConstructionServicePage() {
               </h2>
               <ol className="mt-6 space-y-4">
                 {[
-                  {
-                    t: "Measure & quote",
-                    b: "Share wall photos and dimensions; get a clear estimate.",
-                  },
-                  {
-                    t: "Prep the wall",
-                    b: "Substrate check, layout lines, and board sorting on site.",
-                  },
-                  {
-                    t: "Install & finish",
-                    b: "Fasten for a true plane, then seal, oil, or leave raw.",
-                  },
+                  { t: "Measure & quote", b: "Share wall photos and dimensions; get a clear estimate." },
+                  { t: "Prep the wall", b: "Substrate check, layout lines, and board sorting on site." },
+                  { t: "Install & finish", b: "Fasten for a true plane, then seal, oil, or leave raw." },
                 ].map((step, i) => (
                   <li key={step.t} className="border-t border-pine/15 pt-4">
                     <p className="font-display text-lg text-pine">
@@ -80,6 +72,11 @@ export default function ConstructionServicePage() {
           </div>
         </div>
       </section>
+
+      <PageShareStrip
+        path="/services/construction"
+        title={`Pallet wall construction | ${site.name}`}
+      />
     </PageShell>
   );
 }
