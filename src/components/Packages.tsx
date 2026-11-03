@@ -1,41 +1,4 @@
-const packages = [
-  {
-    name: "Starter Strip",
-    size: "Approx. 6–8 ft feature",
-    price: "$349",
-    note: "Placeholder pricing — replace with Paul's rates",
-    includes: [
-      "Pre-cut, sanded pallet boards",
-      "Layout guide & spacing chart",
-      "Fastener kit + finish sample",
-    ],
-  },
-  {
-    name: "Room Accent",
-    size: "Approx. 10–14 ft wall",
-    price: "$789",
-    note: "Placeholder pricing — replace with Paul's rates",
-    featured: true,
-    includes: [
-      "Matched board set, kiln-dried look",
-      "Stain/oil finish options",
-      "Corner & trim pieces",
-      "Install video walkthrough",
-    ],
-  },
-  {
-    name: "Full Feature",
-    size: "Approx. 16–22 ft statement wall",
-    price: "$1,450",
-    note: "Placeholder pricing — replace with Paul's rates",
-    includes: [
-      "Premium sorted boards",
-      "Custom height & pattern",
-      "Finish applied before ship",
-      "Priority packing & support",
-    ],
-  },
-];
+import { packageCatalog } from "@/lib/packages";
 
 export function Packages() {
   return (
@@ -65,16 +28,16 @@ export function Packages() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {packages.map((pkg) => (
+          {packageCatalog.map((pkg) => (
             <article
               key={pkg.name}
               className={`relative flex flex-col border-t-2 pt-6 ${
-                pkg.featured
+                "featured" in pkg && pkg.featured
                   ? "border-brass bg-gradient-to-b from-ash/80 to-transparent px-1 sm:px-2"
                   : "border-canopy/30"
               }`}
             >
-              {pkg.featured ? (
+              {"featured" in pkg && pkg.featured ? (
                 <span className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-brass">
                   Most requested
                 </span>
@@ -93,7 +56,10 @@ export function Packages() {
               <ul className="mt-6 flex flex-1 flex-col gap-2.5 text-sm leading-relaxed text-ink/75">
                 {pkg.includes.map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span aria-hidden className="mt-[0.45em] h-1.5 w-1.5 shrink-0 rounded-full bg-sage" />
+                    <span
+                      aria-hidden
+                      className="mt-[0.45em] h-1.5 w-1.5 shrink-0 rounded-full bg-sage"
+                    />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -101,7 +67,7 @@ export function Packages() {
               <a
                 href="#quote"
                 className={`mt-8 inline-flex w-full items-center justify-center rounded-sm px-4 py-3 text-sm font-semibold transition-colors ${
-                  pkg.featured
+                  "featured" in pkg && pkg.featured
                     ? "bg-pine text-ash hover:bg-canopy"
                     : "border border-pine/25 text-pine hover:border-pine/50 hover:bg-ash/60"
                 }`}
