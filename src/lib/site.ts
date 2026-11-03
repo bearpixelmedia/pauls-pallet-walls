@@ -27,6 +27,15 @@ export const site = {
   social: {
     // Add when Paul has profiles
   },
+  /** Off-page / local marketing placeholders — replace with live URLs */
+  marketing: {
+    googleBusinessProfileUrl:
+      "https://business.google.com/dashboard", // PLACEHOLDER — paste Paul's GBP link
+    leaveReviewUrl:
+      "https://g.page/r/PLACEHOLDER/review", // PLACEHOLDER — Google review short link
+    facebookPageUrl: "", // optional
+    instagramUrl: "", // optional
+  },
 } as const;
 
 export const services = [
