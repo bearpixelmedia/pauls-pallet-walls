@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { site } from "@/lib/site";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-pine/10 bg-pine py-12 text-mist">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:grid-cols-[1.2fr_1fr_1fr] sm:px-8">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.8fr_0.8fr_1.1fr] sm:px-8">
         <div>
           <BrandLogo tone="hero" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-mist/70">
@@ -42,6 +43,16 @@ export function SiteFooter() {
                 Service area
               </Link>
             </li>
+            <li>
+              <Link href="/#tools" className="hover:text-ash">
+                Wall calculator
+              </Link>
+            </li>
+            <li>
+              <Link href="/#faq" className="hover:text-ash">
+                FAQ
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
@@ -63,12 +74,25 @@ export function SiteFooter() {
               {site.location.city}, {site.location.region}{" "}
               <span className="text-xs text-mist/45">(placeholder)</span>
             </li>
+            <li>
+              <Link href="/#quote" className="hover:text-ash">
+                Request a quote
+              </Link>
+            </li>
           </ul>
         </div>
+        <div>
+          <NewsletterSignup variant="footer" source="footer" />
+        </div>
       </div>
-      <div className="mx-auto mt-10 max-w-6xl px-5 sm:px-8">
+      <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-2 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <p className="text-xs text-mist/45">
           © 2026 {site.name}. Site v1 for review.
+        </p>
+        <p className="text-xs text-mist/45">
+          <Link href="/#local" className="hover:text-mist">
+            Reviews &amp; referrals
+          </Link>
         </p>
       </div>
     </footer>
