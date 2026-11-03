@@ -1,12 +1,16 @@
 import { Construction } from "@/components/Construction";
 import { ExamplesGallery } from "@/components/ExamplesGallery";
+import { Faq } from "@/components/Faq";
 import { Hero } from "@/components/Hero";
 import { HowItWorks } from "@/components/HowItWorks";
+import { LocalMarketing } from "@/components/LocalMarketing";
 import { Packages } from "@/components/Packages";
 import { Quote } from "@/components/Quote";
 import { ServicesPreview } from "@/components/ServicesPreview";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { StickyQuoteCta } from "@/components/StickyQuoteCta";
+import { WallTools } from "@/components/WallTools";
 import { localDescription, site } from "@/lib/site";
 import type { Metadata } from "next";
 
@@ -30,10 +34,14 @@ export default function Home() {
         <ServicesPreview />
         <Packages />
         <Construction />
+        <WallTools />
         <HowItWorks />
+        <Faq />
         <Quote />
+        <LocalMarketing />
       </main>
       <SiteFooter />
+      <StickyQuoteCta />
     </>
   );
 }

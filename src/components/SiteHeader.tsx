@@ -48,6 +48,9 @@ export function SiteHeader({ variant }: Props) {
           <Link href="/service-area" className={linkClass}>
             Service area
           </Link>
+          <Link href="/#tools" className={linkClass}>
+            Tools
+          </Link>
           <Link
             href="/#quote"
             className={

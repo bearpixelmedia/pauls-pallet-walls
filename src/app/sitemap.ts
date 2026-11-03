@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.8,
   }));
+  // /thanks is noindex (post-quote nurture) — omit from sitemap
 
   const serviceRoutes = services.map((s) => ({
     url: `${site.url}${s.href}`,
