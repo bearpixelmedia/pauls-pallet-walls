@@ -10,9 +10,9 @@ export const site = {
   vercelUrl: "https://pauls-pallet-walls.vercel.app",
   description:
     "Pallet wall packages and professional pallet wall construction in Asheville and Western North Carolina — DIY kits and on-site installs for homes, studios, and commercial spaces.",
-  email: "hello@paulbunyanspalletwalls.example", // placeholder
-  phone: "(555) 010-WALL", // placeholder
-  phoneTel: "+15550109255", // placeholder
+  email: "hello@craftedwalls.com",
+  phone: "(555) 010-WALL", // placeholder — Google Voice 828 not created yet
+  phoneTel: "+15550109255", // placeholder — set after Voice claim
   location: {
     city: "Asheville",
     region: "NC",
