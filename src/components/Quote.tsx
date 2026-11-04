@@ -156,7 +156,6 @@ export function Quote() {
                   >
                     {site.email}
                   </a>
-                  <span className="ml-2 text-xs text-ink/40">(placeholder)</span>
                 </dd>
               </div>
               <div>
@@ -165,7 +164,6 @@ export function Quote() {
                   <a href={`tel:${site.phoneTel}`} className="hover:text-pine">
                     {site.phone}
                   </a>
-                  <span className="ml-2 text-xs text-ink/40">(placeholder)</span>
                 </dd>
               </div>
             </dl>
