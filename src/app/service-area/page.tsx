@@ -9,9 +9,15 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: localTitle("Pallet Wall Service Area"),
   description: localDescription(
-    `Pallet wall packages and construction near ${site.location.city}. Neighborhood list is a placeholder for local SEO.`,
+    `Pallet wall packages and on-site construction based in ${site.location.city}, NC.`,
   ),
   alternates: { canonical: "/service-area" },
+  openGraph: {
+    title: `Service area — Asheville & Western North Carolina | ${site.name}`,
+    description: localDescription(
+      "See where we install and ship pallet wall packages across WNC.",
+    ),
+  },
 };
 
 export default function ServiceAreaPage() {
@@ -21,7 +27,7 @@ export default function ServiceAreaPage() {
         <div className="absolute inset-0">
           <Image
             src={images.livingRoom.src}
-            alt={`Homes and interiors served by ${site.name} in the local area`}
+            alt={`Homes and interiors served by ${site.name} in Asheville and Western North Carolina`}
             fill
             priority
             sizes="100vw"
@@ -34,15 +40,13 @@ export default function ServiceAreaPage() {
             Service area
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.2rem,5.5vw,3.75rem)] leading-[1.05] tracking-tight">
-            Pallet walls near {site.location.city}, {site.location.region}
+            Pallet walls in Asheville &amp; Western North Carolina
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-mist/85">
-            Packages ship; construction and commercial installs are available
-            across {site.location.areaLabel}.
-          </p>
-          <p className="mt-3 inline-block rounded-sm bg-brass/20 px-2.5 py-1 text-xs font-medium text-brass-soft">
-            PLACEHOLDER city, state, and neighborhoods — set Paul&apos;s real
-            market in src/lib/site.ts
+            Based in {site.location.city}, we build and ship for homes and
+            businesses across {site.location.areaLabel}. Packages can ship
+            farther; on-site construction focuses on the mountain counties
+            below.
           </p>
         </div>
       </section>
@@ -50,17 +54,34 @@ export default function ServiceAreaPage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <h2 className="font-display text-3xl tracking-tight text-ink">
-            Areas we commonly serve
+            Counties we serve
           </h2>
           <p className="mt-3 max-w-2xl text-ink/70">
-            These neighborhood names are SEO placeholders so the page structure
-            is ready. Replace them with Paul&apos;s real towns and districts.
+            Core install radius covers Buncombe, Haywood, Jackson, Swain, and
+            Cherokee counties. Travel outside this list is quote-by-quote.
+          </p>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            {site.location.counties.map((county) => (
+              <li
+                key={county}
+                className="border border-pine/15 bg-ash/40 px-4 py-3 text-sm font-medium text-ink"
+              >
+                {county}
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="mt-14 font-display text-3xl tracking-tight text-ink">
+            Towns &amp; communities
+          </h2>
+          <p className="mt-3 max-w-2xl text-ink/70">
+            Frequent project towns across WNC — not an exclusive list.
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-4">
             {site.location.neighborhoods.map((place) => (
               <li
                 key={place}
-                className="border border-pine/15 bg-ash/40 px-4 py-3 text-sm font-medium text-ink"
+                className="border border-pine/15 bg-paper px-4 py-3 text-sm font-medium text-ink"
               >
                 {place}
               </li>
@@ -73,7 +94,8 @@ export default function ServiceAreaPage() {
                 Looking for packages?
               </h3>
               <p className="mt-2 text-sm text-ink/70">
-                Kits can ship beyond the core construction radius.
+                Kits ship throughout the region and beyond the core install
+                counties when freight allows.
               </p>
               <Link
                 href="/services/packages"
@@ -84,10 +106,11 @@ export default function ServiceAreaPage() {
             </div>
             <div className="border-t-2 border-canopy/40 pt-6">
               <h3 className="font-display text-2xl text-ink">
-                Need an install?
+                Need an install in WNC?
               </h3>
               <p className="mt-2 text-sm text-ink/70">
-                Ask about travel for construction outside the core towns.
+                On-site construction is scheduled across the five counties —
+                ask about travel if you&apos;re just outside.
               </p>
               <Link
                 href="/services/construction"
@@ -109,7 +132,7 @@ export default function ServiceAreaPage() {
               href="/#tools"
               className="inline-flex rounded-sm border border-pine/25 px-5 py-3 text-sm font-semibold text-pine hover:bg-ash/60"
             >
-              Check ZIP on home tools
+              Check a WNC ZIP
             </Link>
           </div>
         </div>
@@ -117,7 +140,7 @@ export default function ServiceAreaPage() {
 
       <PageShareStrip
         path="/service-area"
-        title={`Service area — ${site.location.city}, ${site.location.region} | ${site.name}`}
+        title={`Service area — Asheville & WNC | ${site.name}`}
       />
     </PageShell>
   );
