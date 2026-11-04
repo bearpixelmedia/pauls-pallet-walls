@@ -11,8 +11,8 @@ export const site = {
   description:
     "Pallet wall packages and professional pallet wall construction in Asheville and Western North Carolina — DIY kits and on-site installs for homes, studios, and commercial spaces.",
   email: "hello@craftedwalls.com",
-  phone: "(828) 515-3162",
-  phoneTel: "+18285153162",
+  phone: "(828) 508-8439",
+  phoneTel: "+18285088439",
   location: {
     city: "Asheville",
     region: "NC",
