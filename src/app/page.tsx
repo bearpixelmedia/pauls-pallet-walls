@@ -16,10 +16,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    absolute: `${site.name} | Pallet Wall Packages & Construction in ${site.location.city}, ${site.location.region}`,
+    absolute: `${site.name} | Pallet Wall Packages & Construction in Asheville, NC`,
   },
   description: localDescription(
-    "Custom pallet wall packages and professional pallet wall construction for homes, studios, and commercial spaces.",
+    "Custom pallet wall packages and professional pallet wall construction for homes, studios, and commercial spaces in Asheville and Western North Carolina.",
   ),
   alternates: { canonical: "/" },
 };

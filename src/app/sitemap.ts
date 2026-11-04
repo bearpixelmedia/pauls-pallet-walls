@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { site, services } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date("2026-11-02");
+  const now = new Date("2026-11-04");
   const staticRoutes = ["", "/services", "/service-area"].map((path) => ({
     url: `${site.url}${path || "/"}`,
     lastModified: now,

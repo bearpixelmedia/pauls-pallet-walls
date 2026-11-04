@@ -10,12 +10,9 @@ export function SiteFooter() {
         <div>
           <BrandLogo tone="hero" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-mist/70">
-            Pallet wall packages &amp; construction serving{" "}
-            {site.location.areaLabel}.
-          </p>
-          <p className="mt-3 text-xs text-brass-soft/90">
-            Local market fields are placeholders — set Paul&apos;s city in{" "}
-            <code className="text-mist/80">src/lib/site.ts</code>
+            Pallet wall packages &amp; construction in{" "}
+            {site.location.areaLabel} — Buncombe, Haywood, Jackson, Swain, and
+            Cherokee counties.
           </p>
         </div>
         <div>
@@ -71,8 +68,7 @@ export function SiteFooter() {
               <span className="text-xs text-mist/45">(placeholder)</span>
             </li>
             <li>
-              {site.location.city}, {site.location.region}{" "}
-              <span className="text-xs text-mist/45">(placeholder)</span>
+              {site.location.city}, {site.location.region}
             </li>
             <li>
               <Link href="/#quote" className="hover:text-ash">
