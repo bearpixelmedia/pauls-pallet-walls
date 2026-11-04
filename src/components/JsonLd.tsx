@@ -38,7 +38,7 @@ export function LocalBusinessJsonLd() {
     url: site.url,
     description: site.description,
     email: site.email,
-    telephone: site.phone,
+    telephone: site.phoneTel,
     image: `${site.url}${images.hero.src.startsWith("/") ? images.hero.src : `/${images.hero.src}`}`,
     address: {
       "@type": "PostalAddress",
