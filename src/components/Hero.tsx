@@ -18,7 +18,6 @@ export function Hero() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        {/* Pine wash + grain overlay — keeps type readable while the pallet wall shows through */}
         <div className="absolute inset-0 bg-gradient-to-r from-pine via-pine/75 to-pine/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-pine via-transparent to-pine/35" />
         <div aria-hidden className="absolute inset-0 slat-field opacity-30" />
@@ -35,16 +34,12 @@ export function Hero() {
           Pallet Walls
         </p>
         <h1 className="animate-rise-delay-1 mt-6 max-w-xl font-display text-2xl font-medium leading-snug tracking-tight text-mist sm:text-3xl">
-          Warm wood feature walls, packaged or built on site in{" "}
-          {site.location.city}, {site.location.region}.
+          Warm wood feature walls, packaged or built on site in Asheville and
+          Western North Carolina.
         </h1>
         <p className="animate-rise-delay-2 mt-4 max-w-md text-base leading-relaxed text-mist/80 sm:text-lg">
           DIY-ready pallet wall kits and professional construction for homes,
           studios, cafés, and retail spaces across {site.location.areaLabel}.
-        </p>
-        <p className="animate-rise-delay-2 mt-3 text-xs text-brass-soft/90">
-          Local city is a placeholder — update in site config for Paul&apos;s
-          market.
         </p>
         <div className="animate-rise-delay-3 mt-8 flex flex-wrap items-center gap-3">
           <Link
