@@ -28,11 +28,11 @@ export default function ConstructionServicePage() {
       />
       <ServiceHero
         eyebrow="Construction"
-        title={`Pallet wall construction in ${site.location.city}`}
-        description="Prefer a turnkey install? Paul measures, preps the substrate, and builds a level feature wall — horizontal, herringbone, or mixed-width."
+        title="Pallet wall construction in Asheville & WNC"
+        description="Prefer a turnkey install across Western North Carolina? Paul measures, preps the substrate, and builds a level feature wall — horizontal, herringbone, or mixed-width."
         image={images.slatDetail.src}
         imageAlt={images.slatDetail.alt}
-        localNote={`Serving ${site.location.areaLabel} (placeholder market)`}
+        localNote={`Serving ${site.location.areaLabel}`}
       />
 
       <section className="py-16 sm:py-20">

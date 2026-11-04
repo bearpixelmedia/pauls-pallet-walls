@@ -28,8 +28,8 @@ export default function CommercialServicePage() {
       />
       <ServiceHero
         eyebrow="Commercial"
-        title={`Commercial pallet walls for ${site.location.city} businesses`}
-        description="Feature walls that hold up to foot traffic and look sharp in brand photography — cafés, boutiques, studios, and offices."
+        title="Commercial pallet walls for Asheville & WNC businesses"
+        description="Feature walls that hold up to foot traffic and look sharp in brand photography — cafés, boutiques, studios, and offices across Western North Carolina."
         image={images.commercial.src}
         imageAlt={images.commercial.alt}
         localNote={`Commercial installs across ${site.location.areaLabel}`}

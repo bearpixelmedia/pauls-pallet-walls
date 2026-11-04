@@ -47,11 +47,11 @@ export default function PackagesServicePage() {
       />
       <ServiceHero
         eyebrow="Packages"
-        title={`Pallet wall packages for ${site.location.city} homes & studios`}
-        description="Ship a kit to your door — pre-cut boards, spacing charts, fasteners, and finish samples so you can hang a clean feature wall on your schedule."
+        title={`Pallet wall packages for Asheville & WNC homes`}
+        description="Ship a kit across Western North Carolina — pre-cut boards, spacing charts, fasteners, and finish samples so you can hang a clean feature wall on your schedule."
         image={images.packageKit.src}
         imageAlt={images.packageKit.alt}
-        localNote={`Local SEO placeholder market: ${site.location.areaLabel}`}
+        localNote={`Serving ${site.location.areaLabel}`}
       />
 
       <PackageGallery />
