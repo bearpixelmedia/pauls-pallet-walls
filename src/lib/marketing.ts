@@ -42,7 +42,9 @@ export function referralUrl() {
 }
 
 export function shareLinks(path = "/", title: string = site.name) {
-  const url = encodeURIComponent(siteShareUrl(path, path.replace(/\W+/g, "_") || "home"));
+  const url = encodeURIComponent(
+    siteShareUrl(path, path.replace(/\W+/g, "_") || "home"),
+  );
   const text = encodeURIComponent(title);
   return {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
@@ -53,10 +55,10 @@ export function shareLinks(path = "/", title: string = site.name) {
   };
 }
 
-/** Placeholder service-area ZIP prefixes for the checker stub. */
-export const SERVICE_ZIP_PREFIXES = [
-  "000", // placeholder — replace with Paul's real prefixes
-  "100",
-  "101",
-  "102",
-] as const;
+/**
+ * WNC ZIP prefixes for the service-area checker:
+ * 287xx — much of Haywood / Jackson / Swain / mountain towns
+ * 288xx — Asheville / Buncombe
+ * 289xx — Cherokee County (Murphy area)
+ */
+export const SERVICE_ZIP_PREFIXES = ["287", "288", "289"] as const;
