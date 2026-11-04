@@ -42,12 +42,15 @@ export const site = {
   social: {
     // Add when Paul has profiles
   },
-  /** Off-page / local marketing placeholders — replace with live URLs */
+  /**
+   * Off-page / local marketing — paste real GBP + review links after claim.
+   * See docs/google-business-profile.md (project store). Do not invent g.page URLs.
+   */
   marketing: {
     googleBusinessProfileUrl:
-      "https://business.google.com/dashboard", // PLACEHOLDER — paste Paul's GBP link
+      "https://business.google.com/create", // TEMP — replace with Maps/Share URL after GBP verified
     leaveReviewUrl:
-      "https://g.page/r/PLACEHOLDER/review", // PLACEHOLDER — Google review short link
+      "https://business.google.com/create", // TEMP — replace with Ask-for-reviews short link after claim
     facebookPageUrl: "", // optional
     instagramUrl: "", // optional
   },
