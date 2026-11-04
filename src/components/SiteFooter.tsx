@@ -60,12 +60,12 @@ export function SiteFooter() {
             <li>
               <a href={`mailto:${site.email}`} className="hover:text-ash">
                 {site.email}
-              </a>{" "}
-              <span className="text-xs text-mist/45">(placeholder)</span>
+              </a>
             </li>
             <li>
-              {site.phone}{" "}
-              <span className="text-xs text-mist/45">(placeholder)</span>
+              <a href={`tel:${site.phoneTel}`} className="hover:text-ash">
+                {site.phone}
+              </a>
             </li>
             <li>
               {site.location.city}, {site.location.region}
