@@ -4,7 +4,10 @@ import { images } from "@/lib/images";
 export const site = {
   name: "Paul Bunyan's Pallet Walls",
   shortName: "Paul Bunyan's",
-  url: "https://pauls-pallet-walls.vercel.app",
+  /** Canonical production host (apex craftedwalls.com 308 → www) */
+  url: "https://www.craftedwalls.com",
+  /** Secondary Vercel deployment host — keep for previews / fallback */
+  vercelUrl: "https://pauls-pallet-walls.vercel.app",
   description:
     "Pallet wall packages and professional pallet wall construction for homes, studios, and commercial spaces — from Paul Bunyan's workshop.",
   email: "hello@paulbunyanspalletwalls.example", // placeholder
