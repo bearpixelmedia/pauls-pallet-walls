@@ -191,16 +191,15 @@ export function WallTools() {
                 Service-area check
               </h3>
               <p className="mt-2 text-sm text-ink/60">
-                Stub checker for {site.location.areaLabel}. Replace ZIP prefixes
-                in <code className="text-xs">src/lib/marketing.ts</code> with
-                Paul&apos;s real market.
+                Quick check for {site.location.areaLabel} ZIPs (287 / 288 /
+                289). Confirms install radius — not a hard deny.
               </p>
               <label className="mt-6 block text-sm">
                 <span className="mb-1.5 block font-medium text-ink">ZIP code</span>
                 <input
                   inputMode="numeric"
                   autoComplete="postal-code"
-                  placeholder="e.g. 10001"
+                  placeholder="e.g. 28801"
                   value={zip}
                   onChange={(e) => {
                     setZip(e.target.value);
@@ -211,18 +210,19 @@ export function WallTools() {
               </label>
               {areaResult === "in" ? (
                 <p className="mt-4 text-sm text-pine">
-                  Looks like core service area — packages and installs welcome.
+                  Looks like WNC service area — packages and installs welcome
+                  in Buncombe, Haywood, Jackson, Swain, and Cherokee counties.
                 </p>
               ) : null}
               {areaResult === "ship" ? (
                 <p className="mt-4 text-sm text-ink/70">
-                  Outside the stub install radius — kits can still ship. Ask
+                  Outside the core WNC install ZIPs — kits can still ship. Ask
                   about travel for construction.
                 </p>
               ) : null}
               {areaResult === "ask" ? (
                 <p className="mt-4 text-sm text-ink/70">
-                  Outside the stub radius for installs — request a quote and
+                  Outside the core WNC install ZIPs — request a quote and
                   we&apos;ll confirm travel.
                 </p>
               ) : null}
