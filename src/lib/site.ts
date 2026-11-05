@@ -2,8 +2,10 @@ import { images } from "@/lib/images";
 
 /** Site-wide config — Asheville / Western North Carolina market. */
 export const site = {
-  name: "Paul Bunyan's Pallet Walls",
-  shortName: "Paul Bunyan's",
+  name: "Crafted Walls",
+  shortName: "Crafted Walls",
+  /** Legacy / secondary product line art — see public/brand/paul-bunyan-badge.png */
+  productLine: "Paul Bunyan's Pallet Walls",
   /** Canonical production host (apex craftedwalls.com 308 → www) */
   url: "https://www.craftedwalls.com",
   /** Secondary Vercel deployment host — keep for previews / fallback */

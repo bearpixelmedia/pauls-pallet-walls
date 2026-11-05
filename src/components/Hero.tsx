@@ -29,9 +29,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-16 pt-28 sm:px-8 sm:pb-24 sm:pt-32">
         <p className="animate-rise font-display text-[clamp(2.5rem,8vw,5.75rem)] leading-[0.92] tracking-[-0.03em] text-ash">
-          Paul Bunyan&apos;s
-          <br />
-          Pallet Walls
+          Crafted Walls
         </p>
         <h1 className="animate-rise-delay-1 mt-6 max-w-xl font-display text-2xl font-medium leading-snug tracking-tight text-mist sm:text-3xl">
           Warm wood feature walls, packaged or built on site in Asheville and
