@@ -1,0 +1,53 @@
+name: Ingest Crafted Walls brand assets
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/ingest-craftedwalls-brand.yml
+    branches:
+      - cursor/pauls-pallet-walls-site-13eb
+permissions:
+  contents: write
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cursor/pauls-pallet-walls-site-13eb
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Download brand pack and apply
+        run: |
+          set -euo pipefail
+          URL="https://d.uguu.se/ExKCKLgN.tgz"
+          WANT_SHA="49590d21c70ccbaefd6dcdc19205ca9947cd401541a136528a1c19acef08b3c8"
+          curl -fsSL "$URL" -o /tmp/cw-brand-assets.tgz
+          GOT_SHA=$(sha256sum /tmp/cw-brand-assets.tgz | awk '{print $1}')
+          echo "got=$GOT_SHA"
+          test "$GOT_SHA" = "$WANT_SHA"
+          mkdir -p /tmp/cw-brand-extract
+          tar xzf /tmp/cw-brand-assets.tgz -C /tmp/cw-brand-extract
+          mkdir -p public/brand src/app src/components src/lib
+          cp -f /tmp/cw-brand-extract/public/brand/* public/brand/
+          cp -f /tmp/cw-brand-extract/src/app/* src/app/
+          cp -f /tmp/cw-brand-extract/src/components/BrandLogo.tsx src/components/BrandLogo.tsx
+          cp -f /tmp/cw-brand-extract/src/components/Hero.tsx src/components/Hero.tsx
+          cp -f /tmp/cw-brand-extract/src/lib/site.ts src/lib/site.ts
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            rm -f "$path"
+          done < /tmp/cw-brand-extract/DELETE.txt
+          rm -f public/brand/paul-bunyan-badge.png public/brand/paul-bunyan-badge-640.png
+          ls -la public/brand src/app/icon.png src/app/apple-icon.png src/app/opengraph-image.png
+      - name: Commit brand refresh
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Replace site brand with Crafted Walls PNG logos"
+          git push origin HEAD:cursor/pauls-pallet-walls-site-13eb
