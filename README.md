@@ -1,42 +1,42 @@
-# Paul's Pallet Walls
+# Crafted Walls (Paul's Pallet Walls) — v1.0.0
 
-Marketing site for **Paul's Pallet Walls** — pallet wall packages (DIY kits) and professional pallet wall construction services.
+Marketing and lead site for **Crafted Walls**: pallet wall packages (DIY kits) and professional pallet wall installs in Asheville and Western North Carolina.
 
-**Live:** https://pauls-pallet-walls.vercel.app
+**Live:** https://www.craftedwalls.com (Vercel project `pauls-pallet-walls`)
 
 ## Stack
 
-- Next.js (App Router) + TypeScript + Tailwind CSS v4
+- Next.js 16 (App Router) + TypeScript + Tailwind CSS v4
 - Deployed on Vercel
 
 ## Local development
 
 ```bash
-npm install
+npm install      # also decodes base64 image sidecars in public/
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Site sections
+## Routes
 
-1. **Hero** — brand-first full-bleed landing
-2. **Packages** — three placeholder pricing tiers (clearly labeled for Paul to replace)
-3. **Construction** — on-site build / finish / commercial services
-4. **How it works** — three-step process
-5. **Contact / quote** — client-side quote form stub (no payment checkout in v1)
+- `/` home (hero, packages, construction, examples, how it works, FAQ, quote)
+- `/services`, `/services/packages`, `/services/construction`, `/services/commercial`
+- `/service-area`, `/thanks`
+- `POST /api/quote` quote leads, `POST /api/subscribe` newsletter signups
 
-## Placeholders for Paul
+## Environment
 
-- Package prices and inclusions
-- Service area / travel fees
-- Email and phone in the quote section
-- Form backend (currently a local success stub)
+Copy `.env.example` to `.env.local`. Production values (`RESEND_API_KEY`,
+`LEAD_TO_EMAIL`, `LEAD_FROM_EMAIL`) live in Vercel only, never in git.
+With no lead env vars set, the APIs fall back to a prefilled `mailto:`.
 
-## Notes
+## Images
 
-- "Pallet wallet construction" in briefs is treated as **pallet wall construction**.
+Photos in `public/images/` are stored as `*.b64.part*` sidecars and decoded
+by `scripts/decode-images.cjs` on `postinstall` / `prebuild`.
 
-## Branch
+## History
 
-Full source lives on `cursor/pauls-pallet-walls-site-13eb` (also production deploy source).
+Recovered on 2026-11-10 from the live production deployment (commit
+`3255013` on `cursor/pauls-pallet-walls-site-13eb`). See CHANGELOG.md.

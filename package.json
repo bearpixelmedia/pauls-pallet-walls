@@ -1,12 +1,15 @@
 {
   "name": "pauls-pallet-walls",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prebuild": "node scripts/decode-images.cjs",
+    "postinstall": "node scripts/decode-images.cjs",
+    "decode-images": "node scripts/decode-images.cjs"
   },
   "dependencies": {
     "next": "16.4.4",
