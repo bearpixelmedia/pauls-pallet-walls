@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  --pine: #0e2419;
+  --moss: #1a3326;
+  --canopy: #264a36;
+  --sage: #7a9a86;
+  --mist: #c8d4cc;
+  --ash: #e6ebe7;
+  --brass: #b08d3c;
+  --brass-soft: #c9ae66;
+  --ink: #101a14;
+  --paper: #f3f6f3;
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-pine: var(--pine);
+  --color-moss: var(--moss);
+  --color-canopy: var(--canopy);
+  --color-sage: var(--sage);
+  --color-mist: var(--mist);
+  --color-ash: var(--ash);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --font-sans: var(--font-karla);
+  --font-display: var(--font-fraunces);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-karla), ui-sans-serif, sans-serif;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--brass) 35%, transparent);
+    color: var(--ink);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  }
+
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  }
+
+  .slat-field {
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(176, 141, 60, 0.08) 0px,
+      rgba(176, 141, 60, 0.08) 1px,
+      transparent 1px,
+      transparent 42px
+    );
+  }
+
+  .animate-rise {
+    animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-rise-delay-1 {
+    animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+  }
+
+  .animate-rise-delay-2 {
+    animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+  }
+
+  .animate-rise-delay-3 {
+    animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.36s both;
+  }
+
+  .animate-slats {
+    animation: slat-sweep 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease both;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slat-sweep {
+  from {
+    opacity: 0;
+    transform: scaleX(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-rise-delay-1,
+  .animate-rise-delay-2,
+  .animate-rise-delay-3,
+  .animate-slats,
+  .animate-fade-in {
+    animation: none !important;
+  }
+}
