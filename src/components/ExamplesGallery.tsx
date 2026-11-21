@@ -14,8 +14,7 @@ export function ExamplesGallery() {
             See the wall before you build it.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink/70">
-            Sample looks for homes and commercial spaces. Replace these
-            placeholder shots with Paul&apos;s completed installs when ready.
+            Sample looks for homes and commercial spaces.
           </p>
         </div>
 
