@@ -82,8 +82,17 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-2 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-        <p className="text-xs text-mist/45">
-          © 2026 {site.name}. Site v1 for review.
+        <p className="text-xs text-mist/90">
+          © 2026 {site.name}. Built with{" "}
+          <span role="img" aria-label="love">♥</span> by{" "}
+          <a href="https://www.bearpixelmedia.com/" className="underline decoration-mist/50 underline-offset-2 hover:text-ash">
+            Bear Pixel Media
+          </a>
+          {" · "}
+          <a href="https://www.bearpixelmedia.com/web-design/asheville" className="underline decoration-mist/50 underline-offset-2 hover:text-ash">
+            Asheville web design
+          </a>
+          . Site v1.0.1
         </p>
         <p className="text-xs text-mist/45">
           <Link href="/#local" className="hover:text-mist">
